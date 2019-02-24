@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+
+  var your_operation = prompt ('Какую операцию хотите произвести?');
+  var a = + prompt ('Введите первое число');
+  var b = + prompt ('Введите второе число');
+
+  function plus(fst_num,sec_num) {
+      return fst_num + sec_num;
+  }
+
+  function minus(fst_num,sec_num) {
+      return fst_num - sec_num;
+  }
+
+  function divide(fst_num,sec_num) {
+      return fst_num / sec_num;
+  }
+
+  function multiply(fst_num,sec_num) {
+      return fst_num * sec_num;
+  }
+
+  function mathOperation(a_, b_, operation) {
+    let result;
+    switch (operation) {
+      case 'Вычитание':
+      result = minus(a_,b_);
+      break;
+      case 'Сложение':
+      result = plus(a_,b_);
+      break;
+      case 'Умножение':
+      result = multiply(a_,b_);
+      break;
+      case 'Деление':
+      result = divide(a_,b_);
+      break;
+      default:
+      result = '';
+      alert ('Так дела не делаются');
+      break;
+    }
+    return result;
+  }
+
+  console.log(mathOperation(a, b, your_operation));
+
+
+//С помощью рекурсии организовать функцию возведения числа в степень.
+//Формат: function power(val, pow), где val — заданное число, pow –— степень.
+/*
+
+    function power (val, pow) {
+        if (pow != 1) {
+          return val * power (val, pow - 1);
+        } else {
+          return val;
+        }
+    }
+
+    alert(power(6,10));
+*/
+
+
+  </script>
+</body>
+</html>

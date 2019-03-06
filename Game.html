@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	//Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)
+
+		var QUESTIONS = [
+			{
+				number: 1,
+				text: 'Какой город является столицей Российской Федерации?',
+				answers: ['Москва', 'Лондон', 'Калининград', 'ТАГИИИЛ'],
+				correct: 1
+
+			},
+			{
+				number: 2,
+				text: 'Что кричат десантники в Париже?',
+				answers: ['tu rêvais de moi', 'Можем повторить!', 'Ква-ква', 'ТАГИИИЛ'],
+				correct: 4
+
+			}
+		];
+		console.log(QUESTIONS);
+
+		var game = function (questions) {
+			let play = true;
+			let round = 0;
+			while (play == true && round < QUESTIONS.length) {
+				let quest = generateQuestion (questions, round);
+				let answer = prompt (quest.qText);
+				play = check (answer, round);
+				round++;
+			}
+		};
+
+		var generateQuestion = function (mas, qNumber) {
+			let answers = '';
+			for (let i = 0; i < 4; i++) {
+				answers = answers + (i + 1) + ' - ' + mas[qNumber].answers[i] + '\n';
+			}
+
+			let text = mas[qNumber].text + '\n' + answers + 'Введите правильный ответ';
+
+			let right = mas[qNumber].correct;
+			return {
+				qText: text,
+				right: right
+			};
+		};
+
+		var check = function (answer, round) {
+			if (answer == QUESTIONS[round].correct) {
+				alert('Правильно!');
+				return true;
+			} else {
+				alert('НЕПРАВИЛЬНО! Количество правильных ответов ' + round);
+				return false;
+			}
+		};
+		game(QUESTIONS);
+	</script>
+</body>
+</html>

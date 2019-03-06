@@ -15,19 +15,37 @@
     // Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
     // Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
 
-      function func(num) {
-        if (num <= 999) {
-          var obj = {
-            Единицы: num[0],
-            Десятки: num[1],
-            Сотни: num[2]
-          };
-          console.log(obj);
-        } else {
-          console.log ('Число больше 999');
-        }
+    var func = function () {
+      let num = + prompt('Введите число от 1 до 999');
+      let obj = {};
+      if (num < 1 || num > 999) {
+        console.log('Введите число от 1 до 999');
+        return obj;
+      } else {
+        obj.tenths = num % 10;
+        obj.hundredths = (num - obj.tenths) % 100 / 10;
+        obj.thousandths = (num - obj.tenths - obj.hundredths * 10) % 1000 / 100;
+        return obj;
       }
-      var res = func('456');
+    }
+
+    console.log(func(435));
+
+
+      // function func(num) {
+      //   if (num <= 999) {
+      //     var obj = {
+      //       Единицы: num[0],
+      //       Десятки: num[1],
+      //       Сотни: num[2]
+      //     };
+      //     console.log(obj);
+      //   } else {
+      //     console.log ('Число больше 999');
+      //   }
+      // }
+      // var res = func('456');
+
 
   </script>
 </body>

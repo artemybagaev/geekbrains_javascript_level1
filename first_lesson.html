@@ -22,14 +22,14 @@
         console.log('Введите число от 1 до 999');
         return obj;
       } else {
-        obj.tenths = num % 10;
-        obj.hundredths = (num - obj.tenths) % 100 / 10;
-        obj.thousandths = (num - obj.tenths - obj.hundredths * 10) % 1000 / 100;
+        obj.units = num % 10;
+        obj.tenth = (num - obj.units) % 100 / 10;
+        obj.hundreds = (num - obj.units - obj.tenth * 10) % 1000 / 100;
         return obj;
       }
     }
 
-    console.log(func(435));
+    console.log(func());
 
 
       // function func(num) {

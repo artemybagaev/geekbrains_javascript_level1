@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "items-list">
+     <div class = "item">
+         <div class = "img_background">
+           <img src="" alt="item" class = "itempic" id ="itempicture">
+         </div>
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+         <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushItemToBusket(this)">
+     </div>
+     <div class = "item">
+         <img src="" alt="item" class = "itempic">
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+         <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushSecondItemToBusket(this)">
+     </div>
+     <div class = "item">
+         <img src="" alt="item" class = "itempic">
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+        <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushThirdItemToBusket(this)">
+     </div>
+     <div class = "item">
+         <img src="" alt="item" class = "itempic">
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+        <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushForthItemToBusket(this)">
+     </div>
+     <div class = "item">
+         <img src="" alt="item" class = "itempic">
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+        <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushFifthItemToBusket(this)">
+     </div>
+     <div class = "item">
+         <img src="" alt="item" class = "itempic">
+         <h2 id = "nm" class = "item_name"></h2>
+         <p class = "descript"></p>
+         <p class = "pricetag"></p>
+        <input type="submit" id = "but" value = "Добавить в корзину" onclick = "pushSixthItemToBusket(this)">
+     </div>
+    </div>
+    <div class = "main_basket">
+      <div id = "total_name">
+
+      </div>
+      <div id = "total_price">
+
+      </div>
+      <div id = "delete_element">
+
+      </div>
+      <div class = "total_value">
+        <span id = "basket_div">Сумма товаров</span>
+      </div>
+      <div>
+        <span id = "basket_items_counter">Количество</span>
+      </div>
+      <input type="submit" id = "countbut" value = "Посчитать сумму корзины" onclick = "countBasket()">
+    </div>
+    <script src="js/items.js"></script>
+    <script src="js/basket.js"></script>
+    <script>
+
+    //Счетчик
+    var count = 0;
+
+    //Функции для добавления товара по клику
+    function pushItemToBusket() {
+      basket.push(items[0]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+    function pushSecondItemToBusket() {
+      basket.push(items[1]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+    function pushThirdItemToBusket() {
+      basket.push(items[2]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+    function pushForthItemToBusket() {
+      basket.push(items[3]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+    function pushFifthItemToBusket() {
+      basket.push(items[4]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+    function pushSixthItemToBusket() {
+      basket.push(items[5]);
+      count++;
+      var countEr = document.getElementById('basket_items_counter');
+      countEr.innerHTML = 'Количество ' + count;
+      countBasket();
+      itemsBasketPush ();
+    }
+
+
+
+
+  </script>
+</body>
+</html>

@@ -9,12 +9,26 @@
 <body>
   <script>
   //С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
-    var num = 0;
-
+    
+    
+    var num = 2;
+    var arr = [2];
+      
     while (num <= 100) {
-      console.log(num);
-      num++;
+        let flag = 1;
+        for (let i = 0; i < arr.length; i++) {
+            if (num % arr[i] == 0) {
+                flag = 0;
+            }
+        }
+        if (flag == 1) {
+            arr.push(num);
+        }
+        num++;
     }
+      
+    console.log(arr);
+      
 
   </script>
 </body>

@@ -12,17 +12,27 @@
   Предположим, есть сущность корзины. Нужно реализовать функционал подсчета
   стоимости корзины в зависимости от находящихся в ней товаров.*/
 
-  var basket = ['iPhone',1000,1,'Samsung',2000,2,'Apple',3000,1];
-
-  function countBasketPrice () {
-  var sum = 0;
-    for (var i = 0; i < basket.length; i+=3) {
-      sum += basket [i + 1] * basket [i + 2];
-    }
-  return sum;
+      
+  var items = {
+     'iPhone': 30000,
+     'Samsung': 22000,
+     'Nokia': 500
   }
-    var result = countBasketPrice();
-    console.log(result);
+  
+  function countBasketPrice () {
+      var sum = 0;
+      for( var key in items ) {
+        if( items.hasOwnProperty (key)) {
+          sum += parseFloat( items[key] );
+        } else if (Object.keys(items).length == 0) {
+            return console.log ('Корзина пуста')
+        }
+      }
+      return sum;
+  }
+      
+  console.log(countBasketPrice());
+          
   </script>
 </body>
 </html>

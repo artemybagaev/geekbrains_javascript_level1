@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  //С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+    
+    
+    var num = 2;
+    var arr = [2];
+      
+    while (num <= 100) {
+        let flag = 1;
+        for (let i = 0; i < arr.length; i++) {
+            if (num % arr[i] == 0) {
+                flag = 0;
+            }
+        }
+        if (flag == 1) {
+            arr.push(num);
+        }
+        num++;
+    }
+      
+    console.log(arr);
+      
+
+  </script>
+</body>
+</html>

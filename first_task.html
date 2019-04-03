@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*  1. Дан код:
+        var a = 1, b = 1, c, d;
+        c = ++a; alert(c);           // 2 - Инкремент a. ++ стоят перед а, поэтому сначала идет инкерментация и только потом выводит результат.
+        d = b++; alert(d);           // 1 - В этом случае наоборот инкрементация происходит, но не выводится на экран.
+        c = (2+ ++a); alert(c);      // 5 - Сначала инкрементируем a до 3х и потом скалдываем 2 + 3
+        d = (2+ b++); alert(d);      // 4 - Инкрементация b произошла, но не выводится на экран. 2 + 2 = 4
+        alert(a);                    // 3 - 2 инкрементации. Выводится число 3 в итоге.
+        alert(b);                    // 3 - также 2 инкрементации.
+        Почему код даёт именно такие результаты?
+
+        2. Чему будет равен x в примере ниже?
+        var a = 2;
+        var x = 1 + (a *= 2);
+
+        alert (x); // x равен 5
+
+
+        3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения.
+        Затем написать скрипт, который работает по следующему принципу:
+        если a и b положительные, вывести их разность;
+        если а и b отрицательные, вывести их произведение;
+        если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+
+        var a = + prompt('Введите первое число');
+        var b = + prompt('Введите второе число');
+
+        if ((a > 0) && (b > 0)) {
+          alert (a - b);
+        } else if ((a < 0) && (b < 0))  {
+          alert (a * b);
+        } else if ((a < 0) && (b >= 0) || (a >= 0) && (b < 0)) {
+          alert (a + b);
+        }
+        */
+
+        /*4. Присвоить переменной а значение в промежутке [0..15].
+        С помощью оператора switch организовать вывод чисел от a до 15.
+
+        var a = + prompt ('Введите чиcло от 0 до 15');
+
+        switch (a) {
+        case 0:
+        alert('Ваше число 0');
+        break;
+        case 1:
+        alert('Ваше число 1');
+        break;
+        case 2:
+        alert('Ваше число 2');
+        break;
+        case 3:
+        alert('Ваше число 3');
+        break;
+        case 4:
+        alert('Ваше число 4');
+        break;
+        case 5:
+        alert('Ваше число 5');
+        break;
+        case 6:
+        alert('Ваше число 6');
+        break;
+        case 7:
+        alert('Ваше число 7');
+        break;
+        case 8:
+        alert('Ваше число 8');
+        break;
+        case 9:
+        alert('Ваше число 9');
+        break;
+        case 10:
+        alert('Ваше число 10');
+        break;
+        case 11:
+        alert('Ваше число 11');
+        break;
+        case 12:
+        alert('Ваше число 12');
+        break;
+        case 13:
+        alert('Ваше число 13');
+        break;
+        case 14:
+        alert('Ваше число 14');
+        break;
+        case 15:
+        alert('Ваше число 15');
+        break;
+        default:
+        alert ('Надо было вводить число от 0 до 15');
+        break;
+        }
+        */
+        /*
+        5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+        Обязательно использовать оператор return. */
+
+        /*function plus(a,b) {
+            return a + b;
+        }
+
+        let summ = plus(5,7);
+        alert (summ);
+
+        function minus(a,b) {
+            return a - b;
+        }
+
+        let min = minus(10,7);
+        alert (min);*/
+
+        /*function divide(a,b) {
+            return a / b;
+        }
+
+        let div = divide(10,2);
+        alert (div);
+
+        function multiply(a,b) {
+            return a * b;
+        }
+
+        let mul = multiply(10,2);
+        alert (mul); */
+
+        /*6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 –
+        значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции
+        выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение
+        (использовать switch).
+
+        var operation = prompt ('Какую операцию хотите произвести?')
+        var a = + prompt ('Введите первое число');
+        var b = + prompt ('Введите второе число');
+
+        function mathOperation(a, b, operation) {
+          switch (operation) {
+            case 'Вычитание':
+            return a - b;
+            break;
+            case 'Сложение':
+            return a + b;
+            break;
+            case 'Умножение':
+            return a * b;
+            break;
+            case 'Деление':
+            return a / b;
+            break;
+            default:
+            alert ('Так дела не делаются');
+            break;
+          }
+        }
+
+        let result = mathOperation (a, b, operation);
+        alert (result); */
+
+        /*7. Сравнить null и 0. Попробуйте объяснить результат.
+
+        var a = null;
+        var b = 0;
+
+        alert(a == b);*/ // false. Null и Undefined строго равны друг другу, но ничему либо еще. Инетренет говорит, что это жесткое правило прописанное в правилах языка.
+
+//        8. С помощью рекурсии организовать функцию возведения числа в степень.
+//        Формат: function power(val, pow), где val – заданное число, pow – степень.
+
+
+        var val = + prompt('Введите число');
+        var pow = + prompt('Возвести в степень');
+
+        function power(val, pow) {
+            if (pow != 1) {
+                return val * power(val, pow - 1);
+            } else {
+                return val;
+            }
+        }
+
+        alert(power(val,pow)); 
+        
+
+  </script>
+</body>
+</html>

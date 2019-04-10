@@ -15,65 +15,59 @@
     }
     .bigdiv {
       border: 1px solid black;
-      width: 700px;
-      height: 700px;
+      width: 800px;
+      height: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
     }
-    .block {
+    .black {
       background-color: black;
       width: 100px;
       height: 100px;
-      display: inline-block;
+      display: flex;
     }
     .white {
       background-color: white;
       width: 100px;
       height: 100px;
-      display: inline-block;
+      display: flex;
     }
   </style>
 </head>
 <body>
   <script>
-
-      //Шахматная доска 8 на 8. Меня хватило тольок на генерацию массивов.
-
-      //Главный двумерный массив
-      var objBig = [];
-
-      //Генератор массива ABCDEFGH. В array пушатся элементы 'A' 'B' и тд.
-      var array = [];
-      var str = 'ABCDEFGH';
-      var arrNum = str.split('');
-
-      for (let i = 0; i < 8; i++)
-      {
-          let temp = [];
-          for (let j = 0; j < 8; j++) {
-          temp[j] = arrNum[j] + (i+1);
+      var mainChess = []; // Массив шахматной доски
+      
+      var num = 'ABCDEFGH';
+      var numSplit = num.split('');
+      console.log(numSplit[1] + 1);
+      
+      for (let i = 0; i < 8; i++) { //Далее нужно сгенерировать ячейки массива A1 B1 C1 и тд
+          var newArr = [];
+          for(let j = 0; j < 8; j++) {
+              newArr[j] = numSplit[j] + (i + 1);
           }
-          objBig.push(temp);
+          mainChess.push(newArr);
       }
-
-      console.log(objBig);
-
-      var bigdiv = document.createElement('DIV');
-      bigdiv.className = "bigdiv";
-      document.body.appendChild(bigdiv);
-      var size = 8;
-      var allsize = size * size;
-
-      for (let i = 0; i <= allsize; i++) {
-        var bigDiv = document.querySelector('.bigdiv')
-        var div = document.createElement('DIV');
-        if(i%2) {
-          div.className = 'white';
-        } else {
-          div.className = 'block';
-        }
-        bigdiv.appendChild(div);
+      console.log(mainChess)
+      
+      var mainDiv = document.createElement('div'); // Создаем основную шахматную доску
+      mainDiv.className = 'bigdiv';
+      document.body.appendChild(mainDiv);
+     
+      for (let i = 0; i < (mainChess.length * 8); i++) { //Добавляем черные ячейки
+              if (i % 2) {
+                 var black = document.createElement('div');
+                 black.className = 'black';
+                 mainDiv.appendChild(black); 
+              } else {
+                 var white = document.createElement('div');
+                 white.className = 'white';
+                 mainDiv.appendChild(white);  
+              }
       }
-
-
+      
   </script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // Написать функцию, преобразующую число в объект.
+    // Передавая на вход число от 0 до 999, мы должны получить на выходе объект,
+    // в котором в соответствующих свойствах описаны единицы, десятки и сотни.
+    // Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.
+    // Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+
+      
+      var num = +prompt('Введите число');
+      var numbers;
+      
+      function separation (num) {
+          
+              if (num > 0 && num < 10) {
+              
+                  let items = num % 10;
+                  
+                  numbers = {
+                  'Items': items
+                  }
+                  
+                  console.log(numbers);
+                  alert('Посмотрите консоль')
+                      
+              } else if (num >= 11 && num <= 99) {
+                  let items = num % 10;
+                  let tens = num % 100 - items;
+
+                  numbers = {
+                      'Tens': tens,
+                      'Items': items
+                  }
+              
+                  console.log(numbers);
+                  alert('Посмотрите консоль')
+                  
+              } else if (num >= 100 && num <= 999) {
+                  
+                  let items = num % 10;
+                  let tens = num % 100 - items;
+                  let hundreds = num % 1000 - tens - items;
+                  
+                  numbers = {
+                      'Hundreds': hundreds,
+                      'Tens': tens,
+                      'Items': items
+                  }
+                  console.log(numbers);
+                  alert('Посмотрите консоль')
+              } else {
+                  alert ('Введите число от 0 до 999')
+              }
+          
+      }
+      
+      
+      separation(num);
+      
+
+  </script>
+</body>
+</html>

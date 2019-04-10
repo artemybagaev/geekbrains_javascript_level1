@@ -6,34 +6,39 @@
 <body>
 	<script type="text/javascript">
 	//Для игры, реализованной на уроке, добавить возможность вывода хода номер n (номер задается пользователем)
+        
+    //На базе игры, созданной на уроке, реализовать игру «Кто хочет стать миллионером?
 
 		var QUESTIONS = [
 			{
 				number: 1,
-				text: 'Какой город является столицей Российской Федерации?',
-				answers: ['Москва', 'Лондон', 'Калининград', 'ТАГИИИЛ'],
-				correct: 1
+				text: 'Кто автор «Сказки о попе и работнике его Балде»?',
+				answers: ['Пушкин', 'Лермонтов', 'Крылов', 'Достоевский'],
+				correct: 1,
+                prize: 100
 
 			},
 			{
 				number: 2,
-				text: 'Что кричат десантники в Париже?',
-				answers: ['tu rêvais de moi', 'Можем повторить!', 'Ква-ква', 'ТАГИИИЛ'],
-				correct: 4
+				text: 'Исполнитель роли Бендера в «Золотом теленке»?',
+				answers: ['Миронов', 'Папанов', 'Гомиашвили', 'Юрский'],
+				correct: 4,
+                prize: 200
 
 			}
 		];
-		console.log(QUESTIONS);
 
 		var game = function (questions) {
 			let play = true;
 			let round = 0;
+            let prize = 0;
 			while (play == true && round < QUESTIONS.length) {
 				let quest = generateQuestion (questions, round);
 				let answer = prompt (quest.qText);
 				play = check (answer, round);
 				round++;
 			}
+            reload(QUESTIONS);
 		};
 
 		var generateQuestion = function (mas, qNumber) {
@@ -52,14 +57,26 @@
 		};
 
 		var check = function (answer, round) {
+            let prize = 0;
 			if (answer == QUESTIONS[round].correct) {
-				alert('Правильно!');
+                prize += 100;
+				alert('Правильно!' + ' ' + 'Кол-во правильных ответов' + ': ' + (round + 1) + ' Ваш выигрыш' + ': ' + (prize * (round + 1)));
 				return true;
 			} else {
-				alert('НЕПРАВИЛЬНО! Количество правильных ответов ' + round);
+                prize = 0;
+				alert('Неправильно! Количество правильных ответов' + ': ' + round + ' ' + 'Вы все проиграли :(' + ' ' + 'Ваш выигрыш' + ':' + ' ' + prize);
 				return false;
 			}
 		};
+        
+        var reload = function (massive) {
+                let reload = prompt ('Сыграем еще раз?' + '\n' + 'Введите "Да" или "Нет"');
+                if (reload == 'Да') {
+                    game(QUESTIONS);
+                } else if (reload == 'Нет') {
+                    alert('Спасибо за игру')
+                }
+        }
 		game(QUESTIONS);
 	</script>
 </body>

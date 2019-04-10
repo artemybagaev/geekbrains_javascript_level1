@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Создаем калькулятор
+Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата, в итоге должно получиться
+<input type="text"> <span>?</span> <input type="text"> = <span>результат</span><br>
+<button>+</button> // при нажатии необходимо сложить
+<button>-</button> // при нажатии необходимо вычесть
+<button></button> // при нажатии необходимо умножить
+<button>/</button> // при нажатии необходимо делить -->
+
+<input type="text" id = "firstbut" value = ''>
+<span>?</span>
+<input type="text" id = "secbut">
+<span>=</span>
+<span id = "result">результат</span><br>
+<button id = "sumbut">+</button>
+<button id = "minbut">-</button>
+<button id = "multibut">*</button>
+<button id = "sepbut">/</button>
+
+<script>
+  var num1 = document.getElementById('firstbut');
+  var num2 = document.getElementById('secbut');
+  var res = document.getElementById('result');
+
+  sumbut.onclick = function sum() {
+    res.innerHTML = parseInt(num1.value) + parseInt(num2.value);
+  }
+  minbut.onclick = function sum() {
+    res.innerHTML = parseInt(num1.value) - parseInt(num2.value);
+  }
+  multibut.onclick = function sum() {
+    res.innerHTML = parseInt(num1.value) * parseInt(num2.value);
+  }
+  sepbut.onclick = function sum() {
+    res.innerHTML = parseInt(num1.value) / parseInt(num2.value);
+  }
+
+</script>
+</body>
+</html>

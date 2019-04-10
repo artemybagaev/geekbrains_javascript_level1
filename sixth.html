@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+    html,
+    body {
+      height: 100%;
+    }
+    .bigdiv {
+      border: 1px solid black;
+      width: 800px;
+      height: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .black {
+      background-color: black;
+      width: 100px;
+      height: 100px;
+      display: flex;
+    }
+    .white {
+      background-color: white;
+      width: 100px;
+      height: 100px;
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <script>
+      var mainChess = []; // Массив шахматной доски
+      
+      var num = 'ABCDEFGH';
+      var numSplit = num.split('');
+      console.log(numSplit[1] + 1);
+      
+      for (let i = 0; i < 8; i++) { //Далее нужно сгенерировать ячейки массива A1 B1 C1 и тд
+          var newArr = [];
+          for(let j = 0; j < 8; j++) {
+              newArr[j] = numSplit[j] + (i + 1);
+          }
+          mainChess.push(newArr);
+      }
+      console.log(mainChess)
+      
+      var mainDiv = document.createElement('div'); // Создаем основную шахматную доску
+      mainDiv.className = 'bigdiv';
+      document.body.appendChild(mainDiv);
+     
+      for (let i = 0; i < (mainChess.length * 8); i++) { //Добавляем черные ячейки
+              if (i % 2) {
+                 var black = document.createElement('div');
+                 black.className = 'black';
+                 mainDiv.appendChild(black); 
+              } else {
+                 var white = document.createElement('div');
+                 white.className = 'white';
+                 mainDiv.appendChild(white);  
+              }
+      }
+      
+  </script>
+</body>
+</html>

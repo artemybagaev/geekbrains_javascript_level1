@@ -20,17 +20,10 @@ function itemsBasketPush () {
   var deleteTag = document.createElement('div');
   total_name.appendChild(nameTag);
   total_price.appendChild(priceTag);
-  delete_element.appendChild(deleteTag).innerHTML = "<input type = 'button' value = 'delete' onclick = 'deleteItem(this)'>";
 
   for (let i = 0; i < basket.length; i++) {
     // basket[i].Name;
     nameTag.innerHTML = basket[i].Name;
     priceTag.innerHTML = basket[i].Price;
-  }
-}
-
-function deleteItem () {
-  for (let i = 0; i < basket.length; i++) {
-    delete basket[i];
   }
 }

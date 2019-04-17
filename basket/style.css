@@ -1,0 +1,85 @@
+body {
+  background-color: #f2f7ff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+}
+
+.itempic {
+  height: 100px;
+}
+
+.img_background {
+  background-color: #ffeaea;
+}
+
+.items-list {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.basket_div {
+  display: flex;
+}
+
+.basketimg {
+  border: 1px solid black;
+  height: 200px;
+  width: 50%;
+}
+
+.basketinfo {
+  border: 1px solid black;
+  height: 200px;
+  width: 50%;
+}
+
+input[type = submit] {
+  background-color: #ffecec;
+  border: none;
+  padding: 10px;
+  clear: both;
+}
+
+input[type = submit]:hover {
+  background-color: black;
+  color: white;
+}
+
+input[type = submit]:active {
+  background-color: black;
+  color: white;
+}
+
+.main_basket {
+  padding: 40px;
+}
+
+#basket_items_counter {
+  display: block;
+  padding: 40px 0;
+  padding: 0 0 20px 0;
+}
+
+#total_name {
+  float: left;
+  padding: 0 50px 0 0;
+}
+
+#total_price {
+  float: left;
+}
+
+.total_value {
+  margin: 20px 0;
+  clear: both;
+}

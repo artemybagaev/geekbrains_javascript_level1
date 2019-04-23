@@ -4,43 +4,59 @@
 	<meta charset="utf-8">
 	<title>ABOBE PHOTOZHAB</title>
 	<style type="text/css">
+		body {
+			background-color: #dddddd;
+		}
 		#canv {
 			width: 1000px;
 			height: 800px;
-			border: 1px solid black
+			background-color: white;
 		}
 		.canv {
+
+		}
+		main {
 			display: flex;
-			justify-content: space-around;
+			flex-direction: column;
+			align-items: center;
+			width: 1000px;
+			margin: 0 auto;
+			background-color: #f3f3f3;
+		}
+		.coordinates {
+			display: flex;
+		}
+		.coordinates p {
+			width: 100px;
 		}
 	</style>
 </head>
 <body>
-<div class="head"></div>
+<main>
+
+
+<div class="head">
+		<button class="toolButton" id='brush'>Brush</button>
+		<button class="toolButton" id='cleaner'>Clean Brush</button>
+		<button class="toolButton" id='square'>Square</button>
+		<select id='sizeSelect'>
+			<option>5</option>
+			<option>10</option>
+			<option>15</option>
+			<option>20</option>
+		</select>
+		<input type="color" id="color">
+</div>
 
 
 	<div class="canv">
 		<canvas id="canv" width="1000" height="800"></canvas>
 	</div>
-
-	<div class="tools">
 		<div class="coordinates">
 			<p id="x"><b>x: </b> <span id="xCoord"></span></p>
 			<p id="y"><b>y: </b> <span id="yCoord"></span></p>
-			<br>
-			<button class="toolButton" id='brush'>Brush</button>
-			<button class="toolButton" id='notbrush'>NotBrush</button>
-			<button class="toolButton" id='notbrush2'>NotBrush 2</button>
-			<select id='sizeSelect'>
-				<option>5</option>
-				<option>10</option>
-				<option>15</option>
-				<option>20</option>
-			</select>
-			<input type="color" id="color">
 		</div>
-	</div>
-
+</main>
 
 	<script src="script.js">
 
